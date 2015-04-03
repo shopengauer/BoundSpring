@@ -1,20 +1,31 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+
 
     <context:component-scan base-package="com.springapp.mvc"/>
     <mvc:annotation-driven/>
+    <mvc:resources mapping="/**" location="/resources/js/" />
+    <mvc:resources mapping="/**" location="/resources/css/" />
+    <!--<mvc:resources mapping="/js/**" location="/META-INF/web-resources/js/" />-->
+    <!--<mvc:resources mapping="/css/**" location="/META-INF/web-resources/css/" />-->
 
-    <mvc:resources mapping="/resources/**" location="/,/META-INF/web-resources/" />
+    <aop:aspectj-autoproxy/>
 
-
+    <bean class="com.springapp.mvc.aspects.Audition"/>
     <!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
     <!--<mvc:resources location="/css/" mapping="/css/**" />-->
     <!--<mvc:resources location="js" mapping="/js/**"/>-->
@@ -38,5 +49,21 @@
         <property name="templateEngine" ref="springTemplateEngine"/>
         <property name="characterEncoding" value="UTF-8"/>
     </bean>
+
+    <bean id = "modelMap" class = "org.springframework.ui.ModelMap"/>
+
+
+    <!--<security:http auto-config="true">-->
+        <!--<security:intercept-url pattern="/thyme/**" access="ROLE_USER"/>-->
+    <!--</security:http>-->
+
+    <!--<security:custom-filter ref="springSecurityFilterChain"/>-->
+    <!--<security >-->
+        <!--:http auto-config="true">-->
+        <!--<security:intercept-url pattern="/thyme/**" access="ROLE_USER"/>-->
+    <!--</security:http>-->
+
+
+
 
 </beans>
