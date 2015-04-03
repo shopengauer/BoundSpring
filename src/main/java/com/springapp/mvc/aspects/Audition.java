@@ -16,9 +16,6 @@ import org.springframework.ui.ModelMap;
 public class Audition {
 
 
-    @Autowired
-    private ModelMap modelMap;
-
     @Pointcut(value = "execution(* com.springapp.mvc.controllers.HelloController.printWelcome(org.springframework.ui.ModelMap))&& args(model)")
     public void audit(ModelMap model){}
 
