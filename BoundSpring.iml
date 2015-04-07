@@ -24,6 +24,9 @@
           <file>file://$MODULE_DIR$/src/main/java/com/springapp/mvc/config/SecurityConfig.java</file>
           <file>file://$MODULE_DIR$/src/main/java/com/springapp/mvc/config/WebConfig.java</file>
         </fileset>
+        <fileset id="fileset3" name="Spring Application Context (3)" removed="false">
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/templates/mvc-dispatcher-servlet.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>

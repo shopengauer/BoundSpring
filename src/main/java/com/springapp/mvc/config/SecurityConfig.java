@@ -21,4 +21,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .withUser("root").password("root").roles("USER");
     }
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().anyRequest().permitAll();
+    }
 }

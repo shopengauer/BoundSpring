@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" ng-app = "showing">
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Start page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"/>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"/>
+    <!--<script src="console.js"/>-->
+    <script src="angularScript.js"/>
+</head>
+<body>
+  <h1>Angular application</h1>
+
+<div ng-controller="showCtrl">
+    <button ng-click="show()">Show</button>
+     <!-- -->
+    <div ng-show = "true">{{isShow}}</div>
+</div>
+
+</body>
+</html>
