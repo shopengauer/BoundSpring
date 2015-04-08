@@ -15,9 +15,9 @@ showApp.controller("showCtrl",function($scope,$http){
 
 
 
-    $http.get('/thyme/resources').success(function(data) {
-        $scope.greeting = data;
-    })
+    //$http.get('/thyme/resources').success(function(data) {
+    //    $scope.greeting = data;
+    //})
 
     $scope.showing = function(){
         $scope.isShow = !($scope.isShow);
@@ -27,10 +27,19 @@ showApp.controller("showCtrl",function($scope,$http){
         $scope.color = color;
     }
 
+    $scope.getMyData = function(){
+        $http.get('/thyme/resources').success(function(data) {
+            $scope.greeting = data;
+        })
+    }
 
 });
 
-
+$(document).ready(function() {
+    $('p').animate({
+        fontSize: '48px'
+    }, "slow");
+});
 //function MController($scope){
 //
 //    this.inv = function(){

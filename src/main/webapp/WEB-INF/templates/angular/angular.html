@@ -21,53 +21,55 @@
     <!--<link href="webjars/bootstrap-material-design/0.2.2/css/ripples.min.css" rel="stylesheet"/>-->
     <!--<link href="webjars/bootstrap-material-design/0.2.2/fonts/Material-Design-Icons.woff" rel="stylesheet"/>-->
 
-
+    <script src = "//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="angularScript.js"></script>
 </head>
-<body>
-<div style="padding: 50px;">
-    <div ng-controller="showCtrl">
-        <div class="jumbotron">
+<body style="padding: 220px;background-color: #ffe7c5">
+<div>
+    <div ng-controller="showCtrl" >
+        <div class="jumbotron" style="background-color: #ffd6c1">
 
-
-            <h1>Angular application {{greeting.firstName}}</h1>
+            <div class="icon-preview"><i class="mdi-action-assessment"></i></div>
+            <h1 class="btn btn-primary btn-lg btn-material-red-400">Angular GDI {{greeting.firstName}}  {{greeting.lastName}}</h1>
+            <br/>
+            <br/>
+            <br/>
             <!--<div class="btn-group btn-group-justified">-->
             <!--<button class="btn btn-primary btn-flat"><i class="mdi-navigation-check"></i> Ok</button>-->
             <!--<button ng-click="showing()">Show</button>-->
-            <button ng-click="setColor('green')" class="btn btn-primary btn-lg">New device</button>
-            <button ng-click="setColor('blue')" class="btn btn-primary btn-lg">Documentation</button>
-            <button ng-click="setColor('red')" class="btn btn-primary btn-lg">Direction</button>
+            <!--<button ng-click="getMyData()" class="btn btn-primary btn-lg btn-material-red-50">Get data</button>-->
+            <!--<button ng-click="setColor('blue')" class="btn btn-primary btn-lg btn-material-red-100">Documentation</button>-->
+            <!--<button ng-click="setColor('red')" class="btn btn-primary btn-lg btn-material-red-200">Direction</button>-->
             <!--</div>-->
             <!-- -->
             <!--<div ng-show = "true">{{isShow}}</div>-->
 
-
-
             <div class="form-group">
                 <input class="form-control floating-label" id="focusedInput" type="text"
                        placeholder="Enter username"/>
+
             </div>
             <div class="form-group">
                 <input type="password" class="form-control floating-label" id="inputPassword"
                        placeholder="Enter password"/>
             </div>
 
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    Basic panel
-                </div>
-            </div>
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-body">-->
+                   <!--<p>Basic panel</p>-->
+                <!--</div>-->
+            <!--</div>-->
 
-            <div ng-show="isShow">
-                <label>Input your name:</label><input type="text"/>
-                <label>Input password:</label><input type="password"/>
-            </div>
+            <!--<div ng-show="isShow">-->
+                <!--<label>Input your name:</label><input type="text"/>-->
+                <!--<label>Input password:</label><input type="password"/>-->
+            <!--</div>-->
         </div>
     </div>
 </div>
 
 
-<script src = "//code.jquery.com/jquery-1.10.2.min.js"></script>
+
 <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>

@@ -29,7 +29,7 @@ public class MyRestController {
     @RequestMapping(method = RequestMethod.GET)
     public User getStr(){
 
-        return new User("Vasiliy","Pavlov");
+        return new User("JSON","Jackson");
     }
 
     @RequestMapping(value = "/home")
