@@ -24,13 +24,27 @@
     <script src = "//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="angularScript.js"></script>
 </head>
-<body style="padding: 220px;background-color: #ffe7c5">
+<body style="padding: 50px;background-color: #ffe7c5">
 <div>
     <div ng-controller="showCtrl" >
         <div class="jumbotron" style="background-color: #ffd6c1">
 
             <div class="icon-preview"><i class="mdi-action-assessment"></i></div>
-            <h1 class="btn btn-primary btn-lg btn-material-red-400">Angular GDI {{greeting.firstName}}  {{greeting.lastName}}</h1>
+
+            <form class="form-horizontal" style="float: left">
+                <h1 class="btn btn-primary btn-lg btn-material-red-400">Angular GDI {{greeting.firstName}}  {{greeting.lastName}}</h1>
+                <div class="form-group" style="margin-top: 20px">
+                    <input class="form-control floating-label" id="focusedInput" type="text"
+                           placeholder="Enter username"/>
+
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control floating-label" id="inputPassword"
+                           placeholder="Enter password"/>
+                </div>
+
+
+            </form>
             <br/>
             <br/>
             <br/>
@@ -44,15 +58,8 @@
             <!-- -->
             <!--<div ng-show = "true">{{isShow}}</div>-->
 
-            <div class="form-group">
-                <input class="form-control floating-label" id="focusedInput" type="text"
-                       placeholder="Enter username"/>
 
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control floating-label" id="inputPassword"
-                       placeholder="Enter password"/>
-            </div>
+
 
             <!--<div class="panel panel-default">-->
                 <!--<div class="panel-body">-->
