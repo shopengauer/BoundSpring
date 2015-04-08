@@ -1,15 +1,35 @@
 /**
  * Created by Vasiliy on 07.04.2015.
  */
+
 var showApp = angular.module("showing",[]);
 
-showApp.controller("showCtrl",function($scope){
+showApp.controller("showCtrl",function($scope,$http){
+
+
+
     $scope.isShow = false;
-    $scope.show = function(){
+    $scope.color = "white";
+
+    //$scope.greeting = {id: 'xxx', content: 'Hello World!'}
+
+
+
+    $http.get('/thyme/resources').success(function(data) {
+        $scope.greeting = data;
+    })
+
+    $scope.showing = function(){
         $scope.isShow = !($scope.isShow);
     }
 
+    $scope.setColor = function(color){
+        $scope.color = color;
+    }
+
+
 });
+
 
 //function MController($scope){
 //

@@ -3,20 +3,83 @@
 <head lang="en">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Start page</title>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"/>
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"/>
-    <!--<script src="console.js"/>-->
-    <script src="angularScript.js"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css"/>
+
+    <!-- Material Design for Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/roboto.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.css"/>
+    <link rel="stylesheet" href = "webjars/bootstrap-material-design/0.2.2/css/ripples.min.css"/>
+    <link rel="stylesheet" href="css/material-wfont.min.css" />
+    <!-- Dropdown.js -->
+    <!--<link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet"/>-->
+
+    <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/>-->
+
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <!--<link href="webjars/bootstrap-material-design/0.2.2/css/ripples.min.css" rel="stylesheet"/>-->
+    <!--<link href="webjars/bootstrap-material-design/0.2.2/fonts/Material-Design-Icons.woff" rel="stylesheet"/>-->
+
+
+    <script src="angularScript.js"></script>
 </head>
 <body>
-  <h1>Angular application</h1>
+<div style="padding: 50px;">
+    <div ng-controller="showCtrl">
+        <div class="jumbotron">
 
-<div ng-controller="showCtrl">
-    <button ng-click="show()">Show</button>
-     <!-- -->
-    <div ng-show = "true">{{isShow}}</div>
+
+            <h1>Angular application {{greeting.firstName}}</h1>
+            <!--<div class="btn-group btn-group-justified">-->
+            <!--<button class="btn btn-primary btn-flat"><i class="mdi-navigation-check"></i> Ok</button>-->
+            <!--<button ng-click="showing()">Show</button>-->
+            <button ng-click="setColor('green')" class="btn btn-primary btn-lg">New device</button>
+            <button ng-click="setColor('blue')" class="btn btn-primary btn-lg">Documentation</button>
+            <button ng-click="setColor('red')" class="btn btn-primary btn-lg">Direction</button>
+            <!--</div>-->
+            <!-- -->
+            <!--<div ng-show = "true">{{isShow}}</div>-->
+
+
+
+            <div class="form-group">
+                <input class="form-control floating-label" id="focusedInput" type="text"
+                       placeholder="Enter username"/>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control floating-label" id="inputPassword"
+                       placeholder="Enter password"/>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Basic panel
+                </div>
+            </div>
+
+            <div ng-show="isShow">
+                <label>Input your name:</label><input type="text"/>
+                <label>Input password:</label><input type="password"/>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<script src = "//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
+<!--<script src = "//fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"/>-->
+<!--<script src = "//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"/>-->
+
+<script>
+    $(document).ready(function() {
+        $.material.init();
+        $.material.ripples();
+    });
+</script>
 
 </body>
 </html>
