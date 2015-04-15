@@ -17,7 +17,7 @@ public class Audition {
 
 
     @Pointcut(value = "execution(* com.springapp.mvc.controllers.HelloController.printWelcome(org.springframework.ui.ModelMap))&& args(model)")
-    public void audit(ModelMap model){}
+                                            public void audit(ModelMap model){}
 
 
     @Before(value = "audit(modelMap)")

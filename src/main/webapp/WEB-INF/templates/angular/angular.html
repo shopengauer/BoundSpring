@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!---->
 <html xmlns:th="http://www.thymeleaf.org" ng-app = "showing">
 <head lang="en">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -11,19 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/roboto.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.css"/>
     <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css"/>
-    <!--<link rel="stylesheet" href="css/material-wfont.min.css" />-->
 
-    <!-- Dropdown.js -->
-    <!--<link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet"/>-->
 
-    <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/>-->
-
-    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>-->
-    <!--<link href="webjars/bootstrap-material-design/0.2.2/css/ripples.min.css" rel="stylesheet"/>-->
-    <!--<link href="webjars/bootstrap-material-design/0.2.2/fonts/Material-Design-Icons.woff" rel="stylesheet"/>-->
 
     <script src = "//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="angularScript.js"></script>
+    <script src="go.js"></script>
+
+
 </head>
 <body style="padding: 50px;background-color: #ffe7c5">
 <div>
@@ -76,6 +72,11 @@
     </div>
 </div>
 
+<div id="sample">
+
+    <div id="myDiagramDiv" style="margin: 200px;border: solid 1px black; width:400px; height:400px"></div>
+
+</div>
 
 
 <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -89,6 +90,23 @@
         $.material.init();
         $.material.ripples();
     });
+</script>
+<script>var $ = go.GraphObject.make;
+var myDiagram =
+        $(go.Diagram, "myDiagramDiv",
+                {
+                    initialContentAlignment: go.Spot.Center, // Center Diagram contents
+                    "undoManager.isEnabled": true // enable Ctrl-Z to undo and Ctrl-Y to redo
+                });
+
+var myModel = $(go.Model);
+// In our model data, each node is represented by a JavaScript object:
+myModel.nodeDataArray = [
+    {key: "NP73E.1-11-1"},
+    {key: "NP71E.1-10-1"},
+    {key: "NP73E.3-4-1"}
+];
+myDiagram.model = myModel;
 </script>
 
 </body>

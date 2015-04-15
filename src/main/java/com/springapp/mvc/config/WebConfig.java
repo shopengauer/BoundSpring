@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.thymeleaf.spring4.SpringTemplateEngine;
@@ -12,14 +13,25 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
 
+import java.util.List;
+
 /**
  * Created by Vasiliy on 03.04.2015.
  */
 @Configuration
-@EnableWebMvc
+//@EnableWebMvc  comment this when we create WebConfig that extends DelegatingWebMvcConfiguration !!!
 @ComponentScan(basePackages = {"com.springapp.mvc.controllers"})
 @Import(value = {SecurityConfig.class,AspectConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter{
+
+
+    @Override
+    public void configurePathMatch(PathMatchConfigurer configurer) {
+
+        super.configurePathMatch(configurer);
+    }
+
+
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -33,8 +45,7 @@ public class WebConfig extends WebMvcConfigurerAdapter{
     }
 
     @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {configurer.enable();
     }
 
     @Bean

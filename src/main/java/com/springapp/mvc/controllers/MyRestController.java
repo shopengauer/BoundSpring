@@ -17,17 +17,18 @@ import java.util.UUID;
 @RequestMapping(value = "/resources")
 public class MyRestController {
 
-//    @RequestMapping(method = RequestMethod.GET)
-//    public Map<String,Object> objectMap(){
-//        Map<String,Object> model = new HashMap<String,Object>();
-//        model.put("id", UUID.randomUUID().toString());
-//        model.put("content", "Hello World");
-//        return model;
-//    }
+    @RequestMapping(value = "map",method = RequestMethod.GET)
+    public Map<String,Object> objectMap(){
+        Map<String,Object> model = new HashMap<String,Object>();
+        model.put("id", UUID.randomUUID().toString());
+        model.put("content", "Hello World");
+        return model;
+    }
 
 
     @RequestMapping(method = RequestMethod.GET)
     public User getStr(){
+
 
         return new User("JSON","Jackson");
     }
